@@ -3,8 +3,12 @@
 #include<string.h>
 
 #define MAX 10000
-int global1, global2;
+int global;
 
+int getInput() {
+	scanf("%d",&global);
+	return global;
+}
 int add(int param1, int param2){
 	return param1+param2;
 }
@@ -20,14 +24,15 @@ int times(int param4){
 }
 
 int main() {
-		int local1, local2, result;
-    scanf("%d",&global1);
-    scanf("%d",&global2);
+		int input1, input2, local1, local2, result;
+    input1 = getInput();
+    input2 = getInput();    
     
-    local1 = times(global1);
-    local2 = times(global2);
+    local1 = times(input1);
+    local2 = times(input2);
     
     result = add(local1, local2);
+    printf("Result is %d\n", result);
     
     return 0;
 }
